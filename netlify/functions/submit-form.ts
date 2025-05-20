@@ -31,12 +31,12 @@ export const handler: Handler = async (event) => {
         data: data,
       }),
     };
-  } catch (error) {
+  } catch (error) {    const err = error as Error;
     return {
       statusCode: 400,
       body: JSON.stringify({
         message: 'Invalid request body',
-        error: error.message,
+        error: err.message,
       }),
     };
   }
