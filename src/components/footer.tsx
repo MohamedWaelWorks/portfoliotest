@@ -5,12 +5,13 @@ import { Mail, FileText } from "lucide-react";
 
 interface SocialLink {
   href: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   label: string;
   aosDelay?: string;
 }
 
-const socialLinks: SocialLink[] = [  { href: "mailto:modywaelabdo@gmail.com", icon: Mail, label: "Email", aosDelay: "200" },
+const socialLinks: SocialLink[] = [
+  { href: "mailto:modywaelabdo@gmail.com", icon: Mail, label: "Email", aosDelay: "200" },
   { href: "/mody cv.pdf", icon: FileText, label: "Resume", aosDelay: "300" } // Links to the resume in public folder
 ];
 
@@ -31,7 +32,7 @@ export function Footer() {
               data-aos="fade-up"
               data-aos-delay={link.aosDelay}
             >
-              <link.icon className="w-7 h-7 sm:w-8 sm:h-8" />
+              {React.createElement(link.icon, { className: "w-7 h-7 sm:w-8 sm:h-8" })}
             </a>
           ))}
         </div>
@@ -39,7 +40,7 @@ export function Footer() {
           © {new Date().getFullYear()} Mohamed Wael. All rights reserved.
         </p>
         <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-2" data-aos="fade-up" data-aos-delay="500">
-          Built with Next.js, Tailwind CSS, and ❤️. Deployed on Vercel.
+          Built with Next.js, Tailwind CSS, and ❤️. Deployed on Netlify.
         </p>
       </div>
     </footer>
