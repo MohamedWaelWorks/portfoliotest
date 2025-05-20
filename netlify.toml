@@ -1,7 +1,7 @@
 [build]
   base = "/"
-  command = "npm install && npm run build"
-  publish = "my-app/.next"
+  command = "npm ci && npm run build"
+  publish = "my-app/out"
   functions = "netlify/functions"
 
 [build.environment]

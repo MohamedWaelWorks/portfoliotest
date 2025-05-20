@@ -1,15 +1,16 @@
 {
-  "name": "mohamed-wael-portfolio",
+  "name": "mohamed-wael-portfolio-root",
   "version": "0.1.0",
   "private": true,
   "workspaces": [
     "my-app"
   ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "npm run build --workspace=my-app",
+    "dev": "npm run dev --workspace=my-app",
+    "start": "npm run start --workspace=my-app",
+    "lint": "npm run lint --workspace=my-app",
+    "clean": "npm run clean --workspace=my-app"
   },
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
