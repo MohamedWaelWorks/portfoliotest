@@ -1,5 +1,5 @@
 [build]
-  base = "d:/Website/mohamed-wael-portfolio"
+  base = "/"
   command = "npm run build"
   publish = ".next"
   functions = "netlify/functions"
