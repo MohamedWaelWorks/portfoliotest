@@ -7,7 +7,8 @@ type EmailData = Record<string, unknown> & {
   message: string | FormDataEntryValue | null;
 }
 
-export const sendEmail = async (data: EmailData) => {  try {
+export const sendEmail = async (data: EmailData) => {
+  try {
     const response = await emailjs.send(
       EMAIL_CONFIG.SERVICE_ID,
       EMAIL_CONFIG.TEMPLATE_ID,

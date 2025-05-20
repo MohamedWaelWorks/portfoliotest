@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { AOSInitializer } from "@/components/aos-initializer";
 import { CursorEffect } from "@/components/cursor-effect";
 import { StarBackground } from "@/components/star-background";
 import { ScrollProgress } from "@/components/scroll-progress";

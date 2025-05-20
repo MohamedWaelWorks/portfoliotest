@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 interface ExperienceCardProps {
   title: string;
@@ -102,12 +103,13 @@ function ExperienceCard({
           alignment === "left" ? "mr-8" : "ml-8"
         }`}
       >
-        <div className="flex items-start gap-4 mb-4">
-          {logoUrl && (
-            <img 
+        <div className="flex items-start gap-4 mb-4">          {logoUrl && (
+            <Image 
               src={logoUrl} 
               alt={company} 
-              className="w-12 h-12 rounded-full bg-neutral-800 p-2"
+              width={48}
+              height={48}
+              className="rounded-full bg-neutral-800 p-2"
             />
           )}
           <div>

@@ -13,9 +13,9 @@ export function ContactSection() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-100px" });
 
-  const contactInfo = {
-    email: "Modywaelabdo@gmail.com",
-    phone: "+201062137061",    social: {
+  const contactInfo = {    email: "Modywaelabdo@gmail.com",
+    phone: "+201062137061",
+    social: {
       twitter: "https://x.com/MohamedTweetys"
     }
   };

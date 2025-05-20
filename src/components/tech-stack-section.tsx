@@ -15,10 +15,10 @@ export function TechStackSection() {
     { name: "MongoDB", level: 75, color: "#47A248" },
     // Add more technologies
   ];
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    // Include technologies in the dependency array
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;

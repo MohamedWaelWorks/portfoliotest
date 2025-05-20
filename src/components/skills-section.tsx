@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Code, PenTool, Shield, MonitorSmartphone } from "lucide-react";
 
 const skillCategories = [
   {

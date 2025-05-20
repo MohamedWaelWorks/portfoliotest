@@ -1,7 +1,7 @@
 "use client";
 
-import { Github, Linkedin, Mail, FileText } from "lucide-react"; // Using Lucide for consistency
-// You can add more icons from react-icons if needed, e.g., FaTwitter, FaInstagram
+import * as React from "react";
+import { Mail, FileText } from "lucide-react";
 
 interface SocialLink {
   href: string;
@@ -10,11 +10,8 @@ interface SocialLink {
   aosDelay?: string;
 }
 
-const socialLinks: SocialLink[] = [
-  { href: "https://github.com/MohamedWaelWorks", icon: Github, label: "GitHub", aosDelay: "0" }, // Replace with your GitHub link
-  { href: "https://www.linkedin.com/in/mohamed-wael-9b220830b/", icon: Linkedin, label: "LinkedIn", aosDelay: "100" }, // Replace with your LinkedIn link
-  { href: "mailto:modywaelabdo@gmail.com", icon: Mail, label: "Email", aosDelay: "200" },
-  { href: "/mody cv.pdf", icon: FileText, label: "Resume", aosDelay: "300" }, // Links to the resume in public folder
+const socialLinks: SocialLink[] = [  { href: "mailto:modywaelabdo@gmail.com", icon: Mail, label: "Email", aosDelay: "200" },
+  { href: "/mody cv.pdf", icon: FileText, label: "Resume", aosDelay: "300" } // Links to the resume in public folder
 ];
 
 export function Footer() {
@@ -34,7 +31,7 @@ export function Footer() {
               data-aos="fade-up"
               data-aos-delay={link.aosDelay}
             >
-              <link.icon size={28} className="sm:w-8 sm:h-8" /> {/* Increased icon size */}
+              <link.icon className="w-7 h-7 sm:w-8 sm:h-8" />
             </a>
           ))}
         </div>
