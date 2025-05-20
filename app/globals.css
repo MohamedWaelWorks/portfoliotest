@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100;
+    @apply transition-colors duration-300; /* Smooth transition for theme changes */
+  }
+
+  /* Basic styling for headings, can be overridden by utility classes */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+/* Example of custom scrollbar (optional, can be removed if not desired) */
+/* For Webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-neutral-100 dark:bg-neutral-800;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-400 dark:bg-neutral-600 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-500 dark:bg-neutral-500;
+}

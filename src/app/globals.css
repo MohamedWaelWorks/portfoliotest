@@ -1,26 +1,155 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Theme Transition */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-delay: 0ms !important;
+}
+
+/* Base Theme Colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: 0 0% 100%;
+  --foreground: 0 0% 10%;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  color-scheme: dark;
+  --background: 0 0% 10%;
+  --foreground: 0 0% 98%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Apply theme colors */
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Background gradients */
+.background-gradient::before {
+  background: radial-gradient(circle at top center,
+      rgba(14, 165, 233, 0.15),
+      transparent 70%);
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  animation: pulse 10s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Animation for shine effect */
+.animate-shine {
+  animation: shine 2s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 165, 233, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(14, 165, 233, 0.5);
+}
+
+/* Selection style */
+::selection {
+  background: rgba(14, 165, 233, 0.2);
+  color: #ffffff;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Floating animation */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Text gradient animation */
+.text-gradient {
+  background: linear-gradient(to right, #00A3FF, #0066ff, #00A3FF);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textShine 3s linear infinite;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Theme toggle effect */
+.theme-toggle-enter {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.theme-toggle-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.theme-toggle-exit {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.theme-toggle-exit-active {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.2s;
 }
