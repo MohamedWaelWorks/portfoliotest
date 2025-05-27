@@ -1,7 +1,7 @@
 [build]
   base = "/"
   command = "npm ci && npm run build"
-  publish = "my-app/out"
+  publish = "my-app/.next"
   functions = "netlify/functions"
 
 [build.environment]
@@ -27,12 +27,10 @@
 [build.processing.images]
   compress = true
 
-[build.environment]
-  NEXT_USE_NETLIFY_EDGE = "true"
-  NEXT_FORCE_EDGE_IMAGES = "true"
-
 [functions]
   node_bundler = "esbuild"
+  directory = "netlify/functions"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
